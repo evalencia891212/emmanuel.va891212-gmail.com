@@ -1,0 +1,20 @@
+<div class='container' style="background-color: transparent;">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h4 class="text__align--center" [innerHTML]="data.title ">
+          </h4>
+          <p class="text__align--center text__weight--regular text__color--dark" [innerHTML]="data.message"></p>
+          <div class="container">
+            <div class="formGroup center-block">
+            <app-mes-modal-container #formComponent [config] = "data.config" ></app-mes-modal-container>
+          </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button *ngFor=" let item of data.buttons" [ngClass]='item.class' (click)="item.callback(onClose())" [innerHTML]="item.buttonText"></button>
+        </div>
+      </div>
+    </div>  
+  </div> 
+
